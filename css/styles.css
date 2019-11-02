@@ -1,0 +1,84 @@
+:root {
+    --black: #5e5e5e;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    background: url('https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80') center center fixed;
+    background-size: cover;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open sans', sans-serif;
+    text-align: center;
+}
+
+.timer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.timer-controls {
+    display: flex;
+}
+
+.timer-controls > * {
+    flex: 1;
+}
+
+.timer-controls form {
+    display: flex;
+    flex: 1;
+}
+
+.timer-controls input {
+    padding: 2rem;
+    border: 0;
+    flex: 1;
+}
+
+.timer-btn {
+    border: 0;
+    padding: 1rem;
+    color: var(--black);
+    font-size: 2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.timer-btn:hover,
+.timer-btn:focus {
+    background: rgba(0, 0, 0, 0.2);
+    outline: 0;
+}
+
+.display {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-time-left {
+    font-size: 20rem;
+    font-weight: 100;
+    margin: 0;
+    color: var(--black);
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.display-end-time {
+    font-size: 4rem;
+    color: var(--black);
+}
