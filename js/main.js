@@ -5,6 +5,9 @@
     const buttons = document.querySelectorAll('[data-time]');
 
     const timer = (seconds) => {
+        // Clear the existing timers
+        clearInterval(countdown);
+
         const now = Date.now();
         const then = now + seconds * 1000;
         displayTimeLeft(seconds);
@@ -34,12 +37,13 @@
         const end = new Date(timestamp);
         const hour = end.getHours();
         const minutes = end.getMinutes();
-
-        // 24h
-        endTime.textContent = `Be back at ${hour}:${minutes < 10 ? '0' : ''}`;
+        if (endTime) {
+            // 24h
+            endTime.textContent = `Be back at ${hour}:${minutes < 10 ? '0' : ''}`;
+            // 12h
+            // endTime.textContent = `Be back at ${hour > 12 ? hour - 12 : hour}:${minutes}`;
+        }
         
-        // 12h
-        // endTime.textContent = `Be back at ${hour > 12 ? hour - 12 : hour}:${minutes}`;
     };
     
     const startTimer = (e) => {
@@ -48,5 +52,10 @@
     };
     
     buttons.forEach(button => button.addEventListener('click', startTimer));
-    timer(100);
+    document.customForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const mins = e.currentTarget.minutes.value;
+        timer(mins * 60);
+        e.currentTarget.reset();
+    });
 }());
