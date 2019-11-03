@@ -1,6 +1,6 @@
 (function(){
     let countdown;
-    const timeDisplay = document.querySelector('.display-timer-left');
+    const timeDisplay = document.querySelector('.display-time-left');
     const endTime = document.querySelector('.display-end-time');
     const buttons = document.querySelectorAll('[data-time]');
 
@@ -38,12 +38,13 @@
         const hour = end.getHours();
         const minutes = end.getMinutes();
         if (endTime) {
-            // 24h
-            endTime.textContent = `Be back at ${hour}:${minutes < 10 ? '0' : ''}`;
-            // 12h
-            // endTime.textContent = `Be back at ${hour > 12 ? hour - 12 : hour}:${minutes}`;
+            //24h
+            endTime.textContent = `Be back at ${hour}:${minutes}`;
+            
+            // //12 h
+            // const adjustedHour = hour > 12 ? hour - 12 : hour;
+            // endTime.textContent = `Be back at ${adjustedHour}:${minutes < 10 ? '0' : ''}${minutes}`;
         }
-        
     };
     
     const startTimer = (e) => {
