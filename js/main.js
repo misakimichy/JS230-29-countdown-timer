@@ -38,12 +38,12 @@
         const hour = end.getHours();
         const minutes = end.getMinutes();
         if (endTime) {
-            //24h
-            endTime.textContent = `Be back at ${hour}:${minutes}`;
+            // 24h
+            // endTime.textContent = `Be back at ${hour}:${minutes}`;
             
-            // //12 h
-            // const adjustedHour = hour > 12 ? hour - 12 : hour;
-            // endTime.textContent = `Be back at ${adjustedHour}:${minutes < 10 ? '0' : ''}${minutes}`;
+            // 12 h
+            const adjustedHour = hour > 12 ? hour - 12 : hour;
+            endTime.textContent = `Be back at ${adjustedHour}:${minutes < 10 ? '0' : ''}${minutes}`;
         }
     };
     
